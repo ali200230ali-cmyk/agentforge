@@ -119,13 +119,15 @@ function buildTeam() {
 <script>
 function runAgents() {
 
-    const agents = [
-        "👑 Chief Agent — Planning...",
-        "📋 PM Agent — Creating tasks...",
-        "🔎 Research Agent — Researching...",
-        "✍️ Writer Agent — Writing...",
-        "🛡️ Critic Agent — Reviewing..."
-    ];
+    const task = document.querySelector("textarea").value;
+
+const agents = [
+    "👑 Chief Agent — Received mission: " + task,
+    "📋 PM Agent — Breaking mission into tasks...",
+    "🔎 Research Agent — Analyzing: " + task,
+    "✍️ Writer Agent — Preparing report...",
+    "🛡️ Critic Agent — Reviewing the mission..."
+];
 
     const result = document.getElementById("result");
 
