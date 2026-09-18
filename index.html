@@ -73,7 +73,47 @@
 
         <br>
 
-        <button>BUILD AI TEAM</button>
+    <button onclick="buildTeam()">BUILD AI TEAM</button>
+
+<div id="result"></div>
+
+<script>
+function buildTeam() {
+
+    const task = document.querySelector("textarea").value;
+
+    if (task.trim() === "") {
+        alert("Please describe your task first.");
+        return;
+    }
+
+    document.getElementById("result").innerHTML = `
+        <div style="
+            margin-top:30px;
+            padding:20px;
+            background:#1e293b;
+            border-radius:12px;
+            text-align:left;
+        ">
+
+            <h2>MISSION</h2>
+
+            <p style="color:white;">
+                ${task}
+            </p>
+
+            <h2>AI TEAM</h2>
+
+            <p>👑 Chief Agent — ✓</p>
+            <p>📋 PM Agent — ✓</p>
+            <p>🔎 Research Agent — ✓</p>
+            <p>✍️ Writer Agent — ✓</p>
+            <p>🛡️ Critic Agent — ✓</p>
+
+        </div>
+    `;
+}
+</script>
 
     </div>
 
