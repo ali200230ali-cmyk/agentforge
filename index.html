@@ -116,6 +116,53 @@ function buildTeam() {
 </script>
 
     </div>
+<script>
+function runAgents() {
 
+    const agents = [
+        "👑 Chief Agent — Planning...",
+        "📋 PM Agent — Creating tasks...",
+        "🔎 Research Agent — Researching...",
+        "✍️ Writer Agent — Writing...",
+        "🛡️ Critic Agent — Reviewing..."
+    ];
+
+    const result = document.getElementById("result");
+
+    result.innerHTML = `
+        <div style="
+            margin-top:30px;
+            padding:20px;
+            background:#1e293b;
+            border-radius:12px;
+            text-align:left;
+        ">
+            <h2>AI TEAM</h2>
+            <div id="agentStatus"></div>
+        </div>
+    `;
+
+    let i = 0;
+
+    function nextAgent() {
+
+        if (i >= agents.length) {
+            document.getElementById("agentStatus").innerHTML +=
+                "<p>✅ Mission Complete</p>";
+            return;
+        }
+
+        document.getElementById("agentStatus").innerHTML +=
+            "<p>" + agents[i] + "</p>";
+
+        i++;
+
+        setTimeout(nextAgent, 1000);
+    }
+
+    nextAgent();
+}
+</script>
+    
 </body>
 </html>
