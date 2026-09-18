@@ -83,12 +83,18 @@ function runAgents() {
 
     const task = document.querySelector("textarea").value;
 
+const subtasks = [
+    "🔎 Research — Gather relevant information",
+    "📊 Analysis — Analyze the information",
+    "📝 Report — Prepare a structured report"
+];
+
 const agents = [
-    "👑 Chief Agent — Received mission: " + task,
-    "📋 PM Agent — Breaking mission into tasks...",
-    "🔎 Research Agent — Analyzing: " + task,
-    "✍️ Writer Agent — Preparing report...",
-    "🛡️ Critic Agent — Reviewing the mission..."
+    "👑 Chief Agent — Mission received: " + task,
+    "📋 PM Agent — Created 3 subtasks",
+    ...subtasks,
+    "🛡️ Critic Agent — Reviewing the work",
+    "👑 Chief Agent — Preparing final result"
 ];
 
     const result = document.getElementById("result");
