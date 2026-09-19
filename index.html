@@ -81,7 +81,9 @@
 <script>
 
 function runAgents() {
-    const mission = {
+
+    const task = document.getElementById("taskInput").value.trim();
+const mission = {
     id: Date.now(),
     goal: task,
     status: "planning",
@@ -90,9 +92,6 @@ function runAgents() {
     outputs: [],
     budget: 1.00
 };
-
-    const task = document.getElementById("taskInput").value.trim();
-
     if (task === "") {
         alert("Please describe your task first.");
         return;
