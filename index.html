@@ -61,41 +61,43 @@
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>AGENTFORGE</h1>
+    <h1>AGENTFORGE</h1>
 
-        <p>AI Workforce Platform</p>
+    <p>AI Workforce Platform</p>
 
-        <textarea
-            placeholder="Describe what you want your AI team to accomplish..."
-        ></textarea>
+    <textarea id="taskInput"
+        placeholder="Describe what you want your AI team to accomplish..."></textarea>
 
-        <br>
+    <br>
 
     <button onclick="runAgents()">BUILD AI TEAM</button>
 
-<div id="result"></div>
-        
+    <div id="result"></div>
+
+</div>
+
 <script>
 
 function runAgents() {
 
-    const task = document.querySelector("textarea").value;
+    const task = document.getElementById("taskInput").value.trim();
 
-const subtasks = [
-    "🔎 Research Agent — Researching: " + task,
-    "📊 Analysis Agent — Analyzing the research",
-    "📝 Report Agent — Building the report"
-];
+    if (task === "") {
+        alert("Please describe your task first.");
+        return;
+    }
 
-const agents = [
-    "👑 Chief Agent — Mission received: " + task,
-    "📋 PM Agent — Created 3 subtasks",
-    ...subtasks,
-    "🛡️ Critic Agent — Reviewing the work",
-    "👑 Chief Agent — Preparing final result"
-];
+    const agents = [
+        "👑 Chief Agent — Mission received: " + task,
+        "📋 PM Agent — Created 3 subtasks",
+        "🔎 Research Agent — Researching: " + task,
+        "📊 Analysis Agent — Analyzing the research",
+        "📝 Report Agent — Building the report",
+        "🛡️ Critic Agent — Reviewing the work",
+        "👑 Chief Agent — Preparing final result"
+    ];
 
     const result = document.getElementById("result");
 
@@ -117,8 +119,10 @@ const agents = [
     function nextAgent() {
 
         if (i >= agents.length) {
+
             document.getElementById("agentStatus").innerHTML +=
                 "<p>✅ Mission Complete</p>";
+
             return;
         }
 
@@ -132,7 +136,8 @@ const agents = [
 
     nextAgent();
 }
+
 </script>
-    
+
 </body>
 </html>
